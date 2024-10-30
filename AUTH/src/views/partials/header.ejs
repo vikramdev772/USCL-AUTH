@@ -1,0 +1,17 @@
+<!-- views/partials/header.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USCL - User Data</title>
+</head>
+<body>
+  <% if (success_msg) { %>
+    <p style="color:green; text-align:center;"><%= success_msg %></p>
+  <% } %>
+  <% if (error_msg) { %>
+    <p style="color:red; text-align:center;"><%= error_msg %></p>
+  <% } %>
+  <% if (error) { %>
+    <p style="color:red; text-align:center;"><%= error %></p>
+  <% } %>

@@ -1,0 +1,72 @@
+<!-- views/data.ejs -->
+<%- include('partials/header') %>
+
+<style>
+  body {
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+  }
+  table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #001a00;
+  }
+  th, td {
+    border: 1px solid #0f0;
+    padding: 12px;
+    text-align: left;
+    font-size: 1em;
+  }
+  th {
+    background-color: #003300;
+  }
+  tr:hover {
+    background-color: #004d00;
+  }
+  a {
+    color: #0f0;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .back-link {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2em;
+  }
+</style>
+
+<h2>User Data</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Verified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(function(user) { %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.isVerified ? 'Yes' : 'No' %></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<a href="/auth/dashboard" class="back-link">← Back to Dashboard</a>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,23 @@
+<!-- views/login.ejs -->
+<%- include('partials/header') %>
+
+<h2>Login</h2>
+<form action="/auth/login" method="POST">
+  <% if (message) { %>
+    <p style="color:red;"><%= message %></p>
+  <% } %>
+  <div>
+    <label>Email:</label>
+    <input type="email" name="email" required />
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" required />
+  </div>
+  <button type="submit">Login</button>
+</form>
+
+<p>Don't have an account? <a href="/auth/signup">Sign up</a></p>
+<p><a href="/auth/forgot-password">Forgot Password?</a></p>
+
+<%- include('partials/footer') %>

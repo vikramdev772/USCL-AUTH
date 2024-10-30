@@ -1,0 +1,30 @@
+<!-- views/signup.ejs -->
+<%- include('partials/header') %>
+
+<h2>Sign Up</h2>
+<form action="/auth/register" method="POST">
+  <% if (message) { %>
+    <p style="color:red;"><%= message %></p>
+  <% } %>
+  <div>
+    <label>Name:</label>
+    <input type="text" name="name" required />
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="email" name="email" required />
+  </div>
+  <div>
+    <label>Phone:</label>
+    <input type="tel" name="phone" required />
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password" required />
+  </div>
+  <button type="submit">Sign Up</button>
+</form>
+
+<p>Already have an account? <a href="/auth/login">Login</a></p>
+
+<%- include('partials/footer') %>
